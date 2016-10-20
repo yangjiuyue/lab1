@@ -5,7 +5,7 @@ public class Expression {
    {
 	   Expression test = new Expression();
 
-	   System.out.println("ÇëÄúÊäÈëÕıÈ·µÄ±í´ïÊ½¹ş¹ş¹ş£º");
+	   System.out.println("è¯·æ‚¨è¾“å…¥æ­£ç¡®çš„è¡¨è¾¾å¼å“ˆå“ˆå“ˆå˜¿å˜¿å˜¿ï¼š");
 	   Scanner sc=new Scanner(System.in);
 	   String expre = sc.nextLine();
 	   String command =  new String();
@@ -14,11 +14,11 @@ public class Expression {
 	   while(f==0)
 	   {
 
-			   System.out.println("ÇëÊäÈëÕıÈ·±í´ïÊ½£¡");
+			   System.out.println("è¯·è¾“å…¥æ­£ç¡®è¡¨è¾¾å¼ï¼");
 			   expre = sc.nextLine();
 			   f = test.expression(expre);
 	   }
-	   System.out.println("ÇëÊäÈëÃüÁî£¨ÇóÖµ£º!simplify var1=num1 ... varn=numn£»  Çóµ¼£º !d/d var");
+	   System.out.println("è¯·è¾“å…¥å‘½ä»¤ï¼ˆæ±‚å€¼ï¼š!simplify var1=num1 ... varn=numnï¼›  æ±‚å¯¼ï¼š !d/d var");
 	   command=sc.nextLine();
 	   while(command!=null){
 		   if(command.charAt(1)=='s')
@@ -29,10 +29,10 @@ public class Expression {
 		   {
 			   test.derivative(expre,command);
 		   }
-		   System.out.println("ÊÇ·ñÏë¼ÌĞø¶ÔÊäÈë×Ö·û´®½øĞĞ²Ù×÷ £¿£¨Y or N£©");
+		   System.out.println("æ˜¯å¦æƒ³ç»§ç»­å¯¹è¾“å…¥å­—ç¬¦ä¸²è¿›è¡Œæ“ä½œ ï¼Ÿï¼ˆY or Nï¼‰");
 		   String str = sc.nextLine();
 		   if(str.charAt(0)=='Y' || str.charAt(0)=='y'){
-			   System.out.println("Çë¼ÌĞøÊäÈë²Ù×÷£º");
+			   System.out.println("è¯·ç»§ç»­è¾“å…¥æ“ä½œï¼š");
 			   command = sc.nextLine();
 		   }else {
 			   command = null;
@@ -83,7 +83,7 @@ public class Expression {
 
    }
 
-   private String simplify(String expre,String com)  //¶Ôº¯Êı½øĞĞ¼ò»¯£¬ÏÈ°Ñ±í´ïÊ½Í¨¹ı¡®+¡¯·Ö³É¼¸²¿·Ö£¬È»ºó·Ö±ğ¶ÔÃ¿²¿·Ö½øĞĞ²Ù×÷£»ÓÖ½«Ã¿²¿·ÖµÄ±äÁ¿ºÍÊı×Ö·Ö¿ª¶ÔÆä½øĞĞ¼ÆËãºóÔÙºÏ²¢Êä³ö
+   private String simplify(String expre,String com)  //å¯¹å‡½æ•°è¿›è¡Œç®€åŒ–ï¼Œå…ˆæŠŠè¡¨è¾¾å¼é€šè¿‡â€˜+â€™åˆ†æˆå‡ éƒ¨åˆ†ï¼Œç„¶ååˆ†åˆ«å¯¹æ¯éƒ¨åˆ†è¿›è¡Œæ“ä½œï¼›åˆå°†æ¯éƒ¨åˆ†çš„å˜é‡å’Œæ•°å­—åˆ†å¼€å¯¹å…¶è¿›è¡Œè®¡ç®—åå†åˆå¹¶è¾“å‡º
    {
 	   int i,j,n=0,k;
 	   String ch = new String();
@@ -182,7 +182,7 @@ public class Expression {
 	  }
 	  return expre1;
    }
-   private void derivative(String expre,String com){ //Ö»ÊÇ¶ÔÒÔÉÏº¯Êı½øĞĞµÄÒ»µã¸Ä±ä£¬ÏÈ°Ñ±í´ïÊ½½øĞĞ¼ò»¯£¬È»ºóÔÙ°ÑÆäÍ¨¹ıÏàÍ¬µÄ·½·¨·Ö³É¼¸²¿·Ö·Ö±ğ²Ù×÷£¬È»ºó½øĞĞ½µÃİÇóµ¼
+   private void derivative(String expre,String com){ //åªæ˜¯å¯¹ä»¥ä¸Šå‡½æ•°è¿›è¡Œçš„ä¸€ç‚¹æ”¹å˜ï¼Œå…ˆæŠŠè¡¨è¾¾å¼è¿›è¡Œç®€åŒ–ï¼Œç„¶åå†æŠŠå…¶é€šè¿‡ç›¸åŒçš„æ–¹æ³•åˆ†æˆå‡ éƒ¨åˆ†åˆ†åˆ«æ“ä½œï¼Œç„¶åè¿›è¡Œé™å¹‚æ±‚å¯¼
 	   Expression test = new Expression();
 	   expre = test.simplify(expre, com);
 	   int i,j,n,flag=0,k;
@@ -201,7 +201,7 @@ public class Expression {
 		   }
 	   }
 	   if(flag==0){
-		   System.out.println("ÇëÖØĞÂÊäÈë£¡");
+		   System.out.println("è¯·é‡æ–°è¾“å…¥ï¼");
 	   }else{
 		   for(i=0;i<expre.length();i++){
 				  if(expre.charAt(i)=='+'){
@@ -235,7 +235,7 @@ public class Expression {
 			  sum[i]=0;
 			  for(j=0;j<listn[i].length();j++){
 				  if(listn[i].charAt(j)==ch){
-					  sum[i]=sum[i]+1;           //¼ÆËãÃ¿×é±äÁ¿µÄ´ÎÃİ
+					  sum[i]=sum[i]+1;           //è®¡ç®—æ¯ç»„å˜é‡çš„æ¬¡å¹‚
 				  }
 			  }
 			  for(j=0;j<listn[i].length();j++)
