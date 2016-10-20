@@ -4,16 +4,16 @@ public class Expression {
    public static void main(String [] args)
    {
 	   Expression test = new Expression();
-	  
-	   System.out.println("请输入正确的表达式：");
+
+	   System.out.println("请您输入正确的表达式：");
 	   Scanner sc=new Scanner(System.in);
 	   String expre = sc.nextLine();
 	   String command =  new String();
 	   int f = test.expression(expre);
-	   
+
 	   while(f==0)
-	   { 
-		       
+	   {
+
 			   System.out.println("请输入正确表达式！");
 			   expre = sc.nextLine();
 			   f = test.expression(expre);
@@ -36,16 +36,16 @@ public class Expression {
 			   command = sc.nextLine();
 		   }else {
 			   command = null;
-			   
+
 		   }
-		   
+
 	   }
-	   
-	   
+
+
    }
    private int  expression(String expre)
    {
-	  int i,flag=1; 
+	  int i,flag=1;
 	  for(i=1;i<expre.length()-1;i++)
 	  {
 		  char ch = expre.charAt(i);
@@ -80,22 +80,22 @@ public class Expression {
 		  flag = 0;
 	  }
 	  return flag;
-	  
+
    }
 
    private String simplify(String expre,String com)  //对函数进行简化，先把表达式通过‘+’分成几部分，然后分别对每部分进行操作；又将每部分的变量和数字分开对其进行计算后再合并输出
    {
 	   int i,j,n=0,k;
 	   String ch = new String();
-	   
-	  
+
+
 	   for(i=0;i<com.length();i++)
 	   {
 		   String str=new String();
 		   String ch1=new String();
 		   if(com.charAt(i) == '=')
 		   {
-			   
+
 			   ch1=ch1+com.charAt(i-1);
 			   while(Character.isDigit(com.charAt(i+1))){
 				   ch=com.substring(i+1,i+2);
@@ -127,7 +127,7 @@ public class Expression {
 			  s=i+1;
 		  }
 	  }
-	  listn[n] = expre.substring(s,expre.length()); 
+	  listn[n] = expre.substring(s,expre.length());
 	  for(i=0;i<=n;i++){
 		  listc[i] = "*";
 	  }
@@ -135,7 +135,7 @@ public class Expression {
 	  for(i=0;i<=n;i++){
 		  num[i]=1;
 	  }
-	
+
 	  for(i=0;i<=n;i++)
 	  {
 		  for(j=0;j<listn[i].length();j++)
@@ -145,18 +145,18 @@ public class Expression {
 					  if(listn[i].charAt(k) =='*'){
 						  break;
 					  }
-					  
+
 				  }
-				  
+
 				  String digit = listn[i].substring(j,k);
 				  num[i] = num[i]*(Integer.parseInt(digit));
 				  j=k-1;
 			  }
 			  else if(Character.isLetter(listn[i].charAt(j))){
 				  listc[i] = listc[i]+listn[i].substring(j,j+1)+"*";
-				  
+
 			  }
-			 
+
 		  }
 	  }
 	  for(i=0;i<n;i++){
@@ -181,7 +181,7 @@ public class Expression {
 		  expre1=expre1.substring(0,expre1.length()-1);
 	  }
 	  return expre1;
-   } 
+   }
    private void derivative(String expre,String com){ //只是对以上函数进行的一点改变，先把表达式进行简化，然后再把其通过相同的方法分成几部分分别操作，然后进行降幂求导
 	   Expression test = new Expression();
 	   expre = test.simplify(expre, com);
@@ -223,9 +223,9 @@ public class Expression {
 				  s=i+1;
 			  }
 		  }
-		  listn[n] = expre.substring(s,expre.length()); 
+		  listn[n] = expre.substring(s,expre.length());
 		  int num[ ]=new int[n+1];
-		  
+
 		  for(i=0;i<=n;i++){
 			  num[i]=1;
 		  }
@@ -245,26 +245,26 @@ public class Expression {
 						  if(listn[i].charAt(k) =='*'){
 							  break;
 						  }
-						  
+
 					  }
-					  
+
 					  String digit = listn[i].substring(j,k);
 					  num[i] = num[i]*(Integer.parseInt(digit));
 					  j=k-1;
 				  }
-				  
+
 				  else if(Character.isLetter(listn[i].charAt(j))){
 					  if(listn[i].charAt(j)!=ch){
 						  listc[i] = listc[i]+listn[i].substring(j,j+1)+"*";
 					  }
-					  
+
 				  }
-				  
+
 			  }
 			  if(sum[i]!=0 && sum[i]!=1){
 					 for(j=1;j<sum[i];j++){
 						 listc[i]=listc[i]+"*"+ch+"*";
-						
+
 					 }
 					 num[i]=num[i]*sum[i];
 				 }else if(sum[i]==0){
@@ -273,7 +273,7 @@ public class Expression {
 				 }else{
 					 listc[i]=listc[i];
 				 }
-				 
+
 		  }
 		  String expre1=new String();
 		  for(i=0;i<=n;i++){
@@ -286,10 +286,10 @@ public class Expression {
 			  expre1=expre1.substring(0,expre1.length()-1);
 		  }
 		  System.out.println(expre1);
-		
+
 	   }
-	   
-		   
+
+
    }
-   
+
 }

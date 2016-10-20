@@ -1,0 +1,194 @@
+[1mdiff --git a/Expression/src/Expression.java b/Expression/src/Expression.java[m
+[1mindex f4613ec..d6afe5a 100644[m
+[1m--- a/Expression/src/Expression.java[m
+[1m+++ b/Expression/src/Expression.java[m
+[36m@@ -4,16 +4,16 @@[m [mpublic class Expression {[m
+    public static void main(String [] args)[m
+    {[m
+ 	   Expression test = new Expression();[m
+[31m-	  [m
+[31m-	   System.out.println("«Î ‰»Î’˝»∑µƒ±Ì¥Ô Ω£∫");[m
+[32m+[m
+[32m+[m	[32m   System.out.println("«Îƒ˙ ‰»Î’˝»∑µƒ±Ì¥Ô Ω£∫");[m
+ 	   Scanner sc=new Scanner(System.in);[m
+ 	   String expre = sc.nextLine();[m
+ 	   String command =  new String();[m
+ 	   int f = test.expression(expre);[m
+[31m-	   [m
+[32m+[m
+ 	   while(f==0)[m
+[31m-	   { [m
+[31m-		       [m
+[32m+[m	[32m   {[m
+[32m+[m
+ 			   System.out.println("«Î ‰»Î’˝»∑±Ì¥Ô Ω£°");[m
+ 			   expre = sc.nextLine();[m
+ 			   f = test.expression(expre);[m
+[36m@@ -36,16 +36,16 @@[m [mpublic class Expression {[m
+ 			   command = sc.nextLine();[m
+ 		   }else {[m
+ 			   command = null;[m
+[31m-			   [m
+[32m+[m
+ 		   }[m
+[31m-		   [m
+[32m+[m
+ 	   }[m
+[31m-	   [m
+[31m-	   [m
+[32m+[m
+[32m+[m
+    }[m
+    private int  expression(String expre)[m
+    {[m
+[31m-	  int i,flag=1; [m
+[32m+[m	[32m  int i,flag=1;[m
+ 	  for(i=1;i<expre.length()-1;i++)[m
+ 	  {[m
+ 		  char ch = expre.charAt(i);[m
+[36m@@ -80,22 +80,22 @@[m [mpublic class Expression {[m
+ 		  flag = 0;[m
+ 	  }[m
+ 	  return flag;[m
+[31m-	  [m
+[32m+[m
+    }[m
+ [m
+    private String simplify(String expre,String com)  //∂‘∫Ø ˝Ω¯––ºÚªØ£¨œ»∞—±Ì¥Ô ΩÕ®π˝°Æ+°Ø∑÷≥…º∏≤ø∑÷£¨»ª∫Û∑÷±∂‘√ø≤ø∑÷Ω¯––≤Ÿ◊˜£ª”÷Ω´√ø≤ø∑÷µƒ±‰¡ø∫Õ ˝◊÷∑÷ø™∂‘∆‰Ω¯––º∆À„∫Û‘Ÿ∫œ≤¢ ‰≥ˆ[m
+    {[m
+ 	   int i,j,n=0,k;[m
+ 	   String ch = new String();[m
+[31m-	   [m
+[31m-	  [m
+[32m+[m
+[32m+[m
+ 	   for(i=0;i<com.length();i++)[m
+ 	   {[m
+ 		   String str=new String();[m
+ 		   String ch1=new String();[m
+ 		   if(com.charAt(i) == '=')[m
+ 		   {[m
+[31m-			   [m
+[32m+[m
+ 			   ch1=ch1+com.charAt(i-1);[m
+ 			   while(Character.isDigit(com.charAt(i+1))){[m
+ 				   ch=com.substring(i+1,i+2);[m
+[36m@@ -127,7 +127,7 @@[m [mpublic class Expression {[m
+ 			  s=i+1;[m
+ 		  }[m
+ 	  }[m
+[31m-	  listn[n] = expre.substring(s,expre.length()); [m
+[32m+[m	[32m  listn[n] = expre.substring(s,expre.length());[m
+ 	  for(i=0;i<=n;i++){[m
+ 		  listc[i] = "*";[m
+ 	  }[m
+[36m@@ -135,7 +135,7 @@[m [mpublic class Expression {[m
+ 	  for(i=0;i<=n;i++){[m
+ 		  num[i]=1;[m
+ 	  }[m
+[31m-	[m
+[32m+[m
+ 	  for(i=0;i<=n;i++)[m
+ 	  {[m
+ 		  for(j=0;j<listn[i].length();j++)[m
+[36m@@ -145,18 +145,18 @@[m [mpublic class Expression {[m
+ 					  if(listn[i].charAt(k) =='*'){[m
+ 						  break;[m
+ 					  }[m
+[31m-					  [m
+[32m+[m
+ 				  }[m
+[31m-				  [m
+[32m+[m
+ 				  String digit = listn[i].substring(j,k);[m
+ 				  num[i] = num[i]*(Integer.parseInt(digit));[m
+ 				  j=k-1;[m
+ 			  }[m
+ 			  else if(Character.isLetter(listn[i].charAt(j))){[m
+ 				  listc[i] = listc[i]+listn[i].substring(j,j+1)+"*";[m
+[31m-				  [m
+[32m+[m
+ 			  }[m
+[31m-			 [m
+[32m+[m
+ 		  }[m
+ 	  }[m
+ 	  for(i=0;i<n;i++){[m
+[36m@@ -181,7 +181,7 @@[m [mpublic class Expression {[m
+ 		  expre1=expre1.substring(0,expre1.length()-1);[m
+ 	  }[m
+ 	  return expre1;[m
+[31m-   } [m
+[32m+[m[32m   }[m
+    private void derivative(String expre,String com){ //÷ª «∂‘“‘…œ∫Ø ˝Ω¯––µƒ“ªµ„∏ƒ±‰£¨œ»∞—±Ì¥Ô ΩΩ¯––ºÚªØ£¨»ª∫Û‘Ÿ∞—∆‰Õ®π˝œ‡Õ¨µƒ∑Ω∑®∑÷≥…º∏≤ø∑÷∑÷±≤Ÿ◊˜£¨»ª∫ÛΩ¯––Ωµ√›«Ûµº[m
+ 	   Expression test = new Expression();[m
+ 	   expre = test.simplify(expre, com);[m
+[36m@@ -223,9 +223,9 @@[m [mpublic class Expression {[m
+ 				  s=i+1;[m
+ 			  }[m
+ 		  }[m
+[31m-		  listn[n] = expre.substring(s,expre.length()); [m
+[32m+[m		[32m  listn[n] = expre.substring(s,expre.length());[m
+ 		  int num[ ]=new int[n+1];[m
+[31m-		  [m
+[32m+[m
+ 		  for(i=0;i<=n;i++){[m
+ 			  num[i]=1;[m
+ 		  }[m
+[36m@@ -245,26 +245,26 @@[m [mpublic class Expression {[m
+ 						  if(listn[i].charAt(k) =='*'){[m
+ 							  break;[m
+ 						  }[m
+[31m-						  [m
+[32m+[m
+ 					  }[m
+[31m-					  [m
+[32m+[m
+ 					  String digit = listn[i].substring(j,k);[m
+ 					  num[i] = num[i]*(Integer.parseInt(digit));[m
+ 					  j=k-1;[m
+ 				  }[m
+[31m-				  [m
+[32m+[m
+ 				  else if(Character.isLetter(listn[i].charAt(j))){[m
+ 					  if(listn[i].charAt(j)!=ch){[m
+ 						  listc[i] = listc[i]+listn[i].substring(j,j+1)+"*";[m
+ 					  }[m
+[31m-					  [m
+[32m+[m
+ 				  }[m
+[31m-				  [m
+[32m+[m
+ 			  }[m
+ 			  if(sum[i]!=0 && sum[i]!=1){[m
+ 					 for(j=1;j<sum[i];j++){[m
+ 						 listc[i]=listc[i]+"*"+ch+"*";[m
+[31m-						[m
+[32m+[m
+ 					 }[m
+ 					 num[i]=num[i]*sum[i];[m
+ 				 }else if(sum[i]==0){[m
+[36m@@ -273,7 +273,7 @@[m [mpublic class Expression {[m
+ 				 }else{[m
+ 					 listc[i]=listc[i];[m
+ 				 }[m
+[31m-				 [m
+[32m+[m
+ 		  }[m
+ 		  String expre1=new String();[m
+ 		  for(i=0;i<=n;i++){[m
+[36m@@ -286,10 +286,10 @@[m [mpublic class Expression {[m
+ 			  expre1=expre1.substring(0,expre1.length()-1);[m
+ 		  }[m
+ 		  System.out.println(expre1);[m
+[31m-		[m
+[32m+[m
+ 	   }[m
+[31m-	   [m
+[31m-		   [m
+[32m+[m
+[32m+[m
+    }[m
+[31m-   [m
+[32m+[m
+ }[m
