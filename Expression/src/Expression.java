@@ -5,7 +5,7 @@ public class Expression {
    {
 	   Expression test = new Expression();
 
-	   System.out.println("请您输入正确的表达式：");
+	   System.out.println("请您输入正确的表达式哈哈哈：");
 	   Scanner sc=new Scanner(System.in);
 	   String expre = sc.nextLine();
 	   String command =  new String();
